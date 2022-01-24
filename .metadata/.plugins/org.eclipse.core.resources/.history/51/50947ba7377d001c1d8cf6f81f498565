@@ -1,0 +1,59 @@
+package gestaodeestoque;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Estoque {
+	private Integer saldo;
+	
+	private DescricaoProduto descricaoProduto;
+	
+	private List<DescricaoProduto> descricaoItem = new ArrayList<DescricaoProduto>();
+
+	
+	public List<DescricaoProduto> getDescricaoItem() {
+		return descricaoItem;
+	}
+	public void setDescricaoItem(List<DescricaoProduto> descricaoItem) {
+		this.descricaoItem = descricaoItem;
+	}
+	public Estoque() {
+		
+	}
+	public Estoque(Integer saldo) {
+		this.saldo = saldo;
+	}
+	
+	public Integer getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(Integer saldo) {
+		this.saldo = saldo;
+	}
+
+	public DescricaoProduto getDescricaoProduto() {
+		return descricaoProduto;
+	}
+
+	public void setDescricaoProduto(DescricaoProduto descricaoProduto) {
+		this.descricaoProduto = descricaoProduto;
+	}
+	
+	public void transferMais (Integer quantidadeSaida) {
+		this.saldo += quantidadeSaida;
+	}
+	public void transferMenos(Integer quantidadeEntrada) {
+		this.saldo += quantidadeEntrada;
+	}
+	@Override
+	public String toString() {
+		return "Estoque [\nsaldo=" + saldo + ""
+				+ " \ndescricaoProduto=" + descricaoProduto + ""
+				+ " \ndescricaoItem=" + descricaoItem
+				+ "]";
+	}
+	
+	
+	
+}	

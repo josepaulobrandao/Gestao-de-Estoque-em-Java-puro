@@ -1,0 +1,41 @@
+package gestaodeestoque;
+
+public class Estoque {
+	private Integer saldo;
+	
+	private DescricaoProduto descricaoProduto;
+	
+	
+	
+	public Estoque() {
+		
+	}
+	public Estoque(Integer saldo) {
+		this.saldo = saldo;
+	}
+	
+	public Integer getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(Integer saldo) {
+		this.saldo = saldo;
+	}
+
+	public DescricaoProduto getDescricaoProduto() {
+		return descricaoProduto;
+	}
+
+	public void setDescricaoProduto(DescricaoProduto descricaoProduto) {
+		this.descricaoProduto = descricaoProduto;
+	}
+	
+	public void transferMais (Integer quantidadeSaida) {
+		this.saldo += quantidadeSaida;
+	}
+	public void transferMenos(Integer quantidadeEntrada) {
+		this.saldo += quantidadeEntrada;
+	}
+	
+	
+}	

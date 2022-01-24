@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+/home/jose/Documentos/cursos/java/estoque/.metadata/.plugins/org.eclipse.jdt.core
+1865797976.index
+2917374312.index
+2403992793.index
