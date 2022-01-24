@@ -140,8 +140,7 @@ public class Programa {
 			processamento += 1;
 		 }
 		
-		}else
-			JOptionPane.showMessageDialog(null, "Acesso não permitido");
+		}JOptionPane.showMessageDialog(null, "Acesso não permitido");
 		
 		System.out.println(estoque.toString());
 	}

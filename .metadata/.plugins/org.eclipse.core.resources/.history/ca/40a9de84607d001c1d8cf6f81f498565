@@ -51,10 +51,12 @@ public class Estoque implements ConcederAcessoEstoque {
 	}
 	
 	public void transferMais (Integer quantidadeSaida) {
+		System.out.println("Quantidade de itens removidos: ");
 		this.saldo += quantidadeSaida;
 	}
 	
 	public void transferMenos(Integer quantidadeEntrada) {
+		System.out.println("Quantidade de itens adicionados: ");
 		this.saldo += quantidadeEntrada;
 	}
 	@Override

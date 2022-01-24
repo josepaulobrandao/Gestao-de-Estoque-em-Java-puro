@@ -2,27 +2,27 @@ package executavel;
 
 import javax.swing.JOptionPane;
 
+import autenticacao.ConcederAcessoEstoque;
 import autenticacao.FuncaoAutenticacao;
 import gestaodeestoque.DescricaoProduto;
 import gestaodeestoque.Estoque;
 
 public class Programa {
 	public static void main(String[] args) {
-		
 		Estoque estoque = new Estoque();
-		
-		
+
+		String operacao = JOptionPane.showInputDialog(null, "\n Olá, o que deseja fazer ?"
+				+ "											 \n Digite 1 para adicionar um ou mais itens do estoque"
+				+ "											 \n Digite 0 para remover um ou mais itens do estoque"
+				+ "											 \n ");
+
+		estoque.setSaldo(500);
 		String login = JOptionPane.showInputDialog("Entre com o login: ");
 		String senha = JOptionPane.showInputDialog("Entre com a senha: ");
 
+		ConcederAcessoEstoque concederAcesso = new Estoque(login, senha);
 		
-		if (new FuncaoAutenticacao(new Estoque(login, senha)).autenticarAcesso()) {
-			String operacao = JOptionPane.showInputDialog(null, "\n Olá, o que deseja fazer ?"
-					+ "											 \n Digite 1 para adicionar um ou mais itens do estoque"
-					+ "											 \n Digite 0 para remover um ou mais itens do estoque"
-					+ "											 \n ");
-			
-			estoque.setSaldo(500);
+		if (new FuncaoAutenticacao(concederAcesso).autenticarAcesso()) {
 		int processamento = 0;
 		while (processamento < 1) {
 
@@ -138,10 +138,9 @@ public class Programa {
 			}
 			
 			processamento += 1;
+
 		 }
-		
-		}else
-			JOptionPane.showMessageDialog(null, "Acesso não permitido");
+		}JOptionPane.showMessageDialog(null, "Acesso não permitido");
 		
 		System.out.println(estoque.toString());
 	}

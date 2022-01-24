@@ -24,8 +24,7 @@ public class Estoque implements ConcederAcessoEstoque {
 		this.descricaoItem = descricaoItem;
 	}
 	public Estoque(String login, String senha) {
-		this.login = login;
-		this.senha = senha;
+		
 	}
 	public Estoque(Integer saldo) {
 		this.saldo = saldo;
@@ -51,10 +50,12 @@ public class Estoque implements ConcederAcessoEstoque {
 	}
 	
 	public void transferMais (Integer quantidadeSaida) {
+		System.out.println("Quantidade de itens removidos: ");
 		this.saldo += quantidadeSaida;
 	}
 	
 	public void transferMenos(Integer quantidadeEntrada) {
+		System.out.println("Quantidade de itens adicionados: ");
 		this.saldo += quantidadeEntrada;
 	}
 	@Override
@@ -64,7 +65,6 @@ public class Estoque implements ConcederAcessoEstoque {
 				+ "\n descricaoItem: " + descricaoItem  + "";
 		
 	}
-	
 	@Override
 	public boolean Autenticar(String login, String senha) {
 		this.login = login;
