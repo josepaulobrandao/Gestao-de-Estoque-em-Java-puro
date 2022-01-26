@@ -50,12 +50,12 @@ public class Estoque implements ConcederAcessoEstoque {
 		this.descricaoProduto = descricaoProduto;
 	}
 	
-	public void transferMais (Integer quantidadeEntrada) {
-		this.saldo += quantidadeEntrada;
+	public void transferMais (Integer quantidadeSaida) {
+		this.saldo -= quantidadeSaida;
 	}
 	
-	public void transferMenos(Integer quantidadeSaida) {
-		this.saldo -= quantidadeSaida;
+	public void transferMenos(Integer quantidadeEntrada) {
+		this.saldo += quantidadeEntrada;
 	}
 	@Override
 	public String toString() {

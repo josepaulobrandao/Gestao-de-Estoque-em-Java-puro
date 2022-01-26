@@ -67,9 +67,9 @@ public class Programa {
 						contador += 1;
 					}
 					
+					estoque.transferMenos(Integer.valueOf(removerProdutos));
 				}
-				
-				estoque.transferMenos(Integer.valueOf(removerProdutos));
+
 			}
 			
 			int continuarOperacao = JOptionPane.showConfirmDialog(null, "Voce deseja realizar uma nova operação ?");

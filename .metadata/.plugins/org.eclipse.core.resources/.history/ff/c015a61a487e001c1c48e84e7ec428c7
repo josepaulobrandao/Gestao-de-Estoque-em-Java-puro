@@ -69,7 +69,7 @@ public class Programa {
 					
 				}
 				
-				estoque.transferMenos(Integer.valueOf(removerProdutos));
+				estoque.transferMenos(Integer.valueOf(removerProdutos) - estoque.getSaldo());
 			}
 			
 			int continuarOperacao = JOptionPane.showConfirmDialog(null, "Voce deseja realizar uma nova operação ?");
